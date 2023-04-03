@@ -1,0 +1,24 @@
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <title>Chat client</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="libs/vue/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+    <input type="text" id="message" placeholder="Write a message" v-model="message" /><button id="send" v-on:click="sendMessage()">Send</button>
+    <ul >
+      <li v-for="(message, index) in messages">
+        <div >
+          <div ><b>{{ message }}</b></div>
+         </div>
+      </li>
+    </ul>
+   </div>
+
+    <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="vclient.js"></script>
+</body>
+</html>
